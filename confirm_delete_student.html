@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Confirm Delete{% endblock %}
+{% block content %}
+
+<h1 class="h1">Delete Student</h1>
+
+<div class="card">
+  <p>Are you sure you want to delete <strong>{{ student.name }}</strong> (ID: {{ student.student_id }})?</p>
+  <p>This will also remove their attendance records.</p>
+
+  <form method="POST" action="{{ url_for('confirm_delete_student', student_id=student.id) }}" style="margin-top:12px;display:flex;gap:10px">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="{{ url_for('admin_students') }}" class="btn btn-muted">Cancel</a>
+  </form>
+</div>
+
+{% endblock %}

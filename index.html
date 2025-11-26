@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef1f5;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: block;
+            width: 250px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Student Attendance System</h1>
+
+    <a href="{{ url_for('register') }}" class="button">Register as Student</a>
+    <a href="{{ url_for('mark_attendance') }}" class="button">Mark Attendance</a>
+    <a href="{{ url_for('login') }}" class="button">Login</a>
+</body>
+</html>

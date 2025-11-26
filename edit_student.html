@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
+{% block content %}
+
+<h1 class="h1">Edit Student</h1>
+
+<form method="POST" class="card form">
+  <div class="field">
+    <label class="label">Full Name</label>
+    <input class="input" type="text" name="name" value="{{ student.name }}" required>
+  </div>
+
+  <div class="field">
+    <label class="label">Student ID</label>
+    <input class="input" type="text" name="student_id" value="{{ student.student_id }}" required>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <input class="input" type="email" name="email" value="{{ student.email }}" required>
+  </div>
+
+  <div class="field">
+    <label class="label">Course</label>
+    <input class="input" type="text" name="course" value="{{ student.course }}" required>
+  </div>
+
+  <div class="field">
+    <label class="label">Gender</label>
+    <select class="input" name="gender" required>
+      <option value="Male" {{ 'selected' if student.gender=='Male' else '' }}>Male</option>
+      <option value="Female" {{ 'selected' if student.gender=='Female' else '' }}>Female</option>
+      <option value="Other" {{ 'selected' if student.gender=='Other' else '' }}>Other</option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">Save Changes</button>
+    <a class="btn btn-muted" href="{{ url_for('admin_students') }}">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}
